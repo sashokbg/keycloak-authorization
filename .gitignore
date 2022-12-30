@@ -1,0 +1,8 @@
+build
+node_modules
+target
+.idea
+.terraform*
+terraform*
+.mvn
+

@@ -1,0 +1,8 @@
+{
+  "realm": "master",
+  "auth-server-url": "http://localhost:8080/",
+  "url": "http://localhost:8080/",
+  "resource": "bankerise",
+  "ssl-required": "external",
+  "public-client": true
+}

@@ -1,0 +1,17 @@
+#keycloak:
+#  realm: spring-security-quickstart
+#  auth-server-url: "http://127.0.0.1:9000/"
+#  ssl-required: "external"
+#  resource: "app-authz-spring-security"
+#  credentials:
+#    secret: "secret"
+#  policy-enforcer-config:
+#    on-deny-redirect-to: "/accessDenied"
+
+
+
+logging:
+  level:
+    org:
+      springframework:
+        security: DEBUG
