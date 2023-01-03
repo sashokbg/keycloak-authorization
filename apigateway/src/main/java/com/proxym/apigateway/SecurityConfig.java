@@ -10,7 +10,7 @@ import org.springframework.security.core.session.SessionRegistryImpl;
 import org.springframework.security.web.authentication.session.RegisterSessionAuthenticationStrategy;
 import org.springframework.security.web.authentication.session.SessionAuthenticationStrategy;
 
-@KeycloakConfiguration
+//@KeycloakConfiguration
 public class SecurityConfig extends KeycloakWebSecurityConfigurerAdapter {
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) {
@@ -25,10 +25,13 @@ public class SecurityConfig extends KeycloakWebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         super.configure(http);
+
         http.logout().logoutSuccessUrl("/home")
                 .and()
                 .authorizeRequests()
-                .antMatchers("/**").hasAuthority("user");
+                .antMatchers("/**")
+                .permitAll();
+                //.hasAuthority("user");
     }
 
 }

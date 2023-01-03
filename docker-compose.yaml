@@ -5,7 +5,7 @@ services:
       - keycloak:/opt/keycloak/data
       - ./js-policies/target/js-policies.jar:/opt/keycloak/providers/js-policies.jar
     ports:
-      - 9000:8080
+      - 9999:8080
     environment:
       KEYCLOAK_ADMIN: admin
       KEYCLOAK_ADMIN_PASSWORD: admin

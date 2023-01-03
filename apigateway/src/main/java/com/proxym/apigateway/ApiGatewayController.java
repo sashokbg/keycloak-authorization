@@ -2,6 +2,7 @@ package com.proxym.apigateway;
 
 import org.keycloak.KeycloakSecurityContext;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Profile;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,10 +14,16 @@ import java.io.IOException;
 
 @RestController
 @RequestMapping("/")
+@Profile("!v2")
 public class ApiGatewayController {
 
     @Autowired
     private HttpServletRequest request;
+
+    @GetMapping
+    public String defRoute() {
+        return "Default route";
+    }
 
     @GetMapping("/protected")
     public String get() {
