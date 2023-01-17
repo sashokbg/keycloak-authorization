@@ -9,8 +9,8 @@ terraform {
 
 provider "keycloak" {
   client_id     = "terraform"
-  client_secret = "8iNzdfaRgJt4OKc8r8q3nw61KDRbmX5F"
-  url           = "http://127.0.0.0:9000"
+  client_secret = "terraform_password123"
+  url           = "http://127.0.0.0:9900"
 }
 
 resource "keycloak_realm" "realm" {

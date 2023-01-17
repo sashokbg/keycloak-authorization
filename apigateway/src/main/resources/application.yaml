@@ -1,6 +1,6 @@
 #keycloak:
 #  realm: spring-security-quickstart
-#  auth-server-url: "http://127.0.0.1:9000/"
+#  auth-server-url: "http://127.0.0.1:9900/"
 #  ssl-required: "external"
 #  resource: "app-authz-spring-security"
 #  credentials:
