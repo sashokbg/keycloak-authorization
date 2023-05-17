@@ -3,6 +3,7 @@ package com.proxym.apigateway;
 import org.keycloak.KeycloakSecurityContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -37,6 +38,13 @@ public class ApiGatewayController {
         KeycloakSecurityContext attribute = (KeycloakSecurityContext) request.getAttribute(KeycloakSecurityContext.class.getName());
 
         return "/protected/alice: " + attribute.getIdToken().getPreferredUsername();
+    }
+
+    @GetMapping("/group/{group}/account/{account}")
+    public String a(@PathVariable("group") String group, @PathVariable("account") String account) {
+        KeycloakSecurityContext attribute = (KeycloakSecurityContext) request.getAttribute(KeycloakSecurityContext.class.getName());
+
+        return "/protected: " + attribute.getIdToken().getPreferredUsername();
     }
 
     @GetMapping("/logout")
